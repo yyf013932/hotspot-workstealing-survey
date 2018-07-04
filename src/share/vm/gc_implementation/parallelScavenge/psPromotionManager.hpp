@@ -66,19 +66,12 @@ private:
     static PSOldGen *_old_gen;
     static MutableSpace *_young_space;
 
-    static size_t _initial_time;
-    static size_t _par_time;
-    static size_t _final_time;
 
 #if TASKQUEUE_STATS
     size_t _masked_pushes;
     size_t _masked_steals;
     size_t _arrays_chunked;
     size_t _array_chunks_processed;
-
-    size_t _steal_attemps;  //total steal attempts (including failed and success attempts)
-    size_t _fail_attemps;   //total fail attempts
-    size_t _first_fail_attemps; // the steal attempts when first fail attempts occure
 
 
     void print_taskqueue_stats(uint i) const;

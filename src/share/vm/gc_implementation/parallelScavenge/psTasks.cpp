@@ -42,6 +42,8 @@
 #include "services/management.hpp"
 #include "utilities/taskqueue.hpp"
 
+
+
 //
 // ScavengeRootsTask
 //
@@ -137,18 +139,16 @@ void ThreadRootsTask::do_it(GCTaskManager *manager, uint which) {
 // StealTask
 //
 
+uint StealTask::_steal_attempts = 0;
+uint StealTask::_steal_fail = 0;
+uint StealTask::_after_first_fail_attempts = 0;
+uint StealTask::_after_first_fail_attempts_fail = 0;
+uint StealTask::_gc_count = 0;
+
 StealTask::StealTask(ParallelTaskTerminator *t) :
         _terminator(t) {
-    if (!_inited)
-        initialize();
 }
 
-void StealTask::initialize() {
-    _steal_attempts = _steal_fail = 0;
-    _after_first_fail_attempts = _after_first_fail_attempts_fail = 0;
-    _gc_count = 0;
-    _inited = true;
-}
 
 void StealTask::do_it(GCTaskManager *manager, uint which) {
     assert(Universe::heap()->is_gc_active(), "called outside gc");

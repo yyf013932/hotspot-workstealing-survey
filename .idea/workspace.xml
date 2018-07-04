@@ -12,12 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e8e8ce6-2b94-41f7-bdbb-34d803fe2d47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp" afterDir="false" />
     </list>
@@ -35,20 +34,11 @@
       <file leaf-file-name="psScavenge.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="456" column="44" selection-start-line="456" selection-start-column="44" selection-end-line="456" selection-end-column="44" />
+            <state relative-caret-position="242">
+              <caret line="445" column="18" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
               <folding>
                 <element signature="e#1061#1087#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psPromotionManager.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="188" column="40" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -56,29 +46,11 @@
       <file leaf-file-name="psTasks.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psPromotionManager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+            <state relative-caret-position="586">
+              <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
               <folding>
-                <element signature="e#1061#1087#0" expanded="true" />
+                <element signature="e#1190#1222#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parallelScavengeHeap.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="143" column="26" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -86,34 +58,75 @@
       <file leaf-file-name="psTasks.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="145" column="16" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+            <state relative-caret-position="891">
+              <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+              <folding>
+                <marker date="1530709776548" expanded="true" signature="5522:5640" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="metadata.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/oops/metadata.cpp">
+      <file leaf-file-name="gcAdaptivePolicyCounters.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-550" />
+            <state relative-caret-position="451">
+              <caret line="192" column="30" selection-start-line="192" selection-start-column="30" selection-end-line="192" selection-end-column="30" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="symbol.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/oops/symbol.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="typeArrayKlass.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/oops/typeArrayKlass.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="symbol.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/share/vm/oops/symbol.hpp">
+      <file leaf-file-name="gcPolicyCounters.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcPolicyCounters.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="44" column="54" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+            <state relative-caret-position="462">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalDefinitions.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/utilities/globalDefinitions.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1144">
+              <caret line="263" column="21" selection-start-line="263" selection-start-column="21" selection-end-line="263" selection-end-column="21" />
+              <folding>
+                <element signature="e#2101#2144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="psScavenge.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1441">
+              <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="accessFlags.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/utilities/accessFlags.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2376" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="psPromotionManager.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="883">
+              <caret line="170" column="18" lean-forward="true" selection-start-line="170" selection-start-column="18" selection-end-line="170" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="perfData.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/share/vm/runtime/perfData.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="891">
+              <caret line="486" column="16" selection-start-line="486" selection-start-column="16" selection-end-line="486" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -139,7 +152,6 @@
       <find>_active_workers</find>
       <find>EventExecuteVMOperation</find>
       <find>initial</find>
-      <find>initialize</find>
       <find>GCTaskManager::initialize</find>
       <find>WaitForBarrierGCTask</find>
       <find>_idle_inactive_task</find>
@@ -152,6 +164,7 @@
       <find>globalDefini</find>
       <find>timer</find>
       <find>PrintGCTaskTimeStamps</find>
+      <find>initialize</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -188,13 +201,14 @@
         <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/shared/objectCountEventSender.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp" />
-        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp" />
-        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp" />
         <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp" />
-        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp" />
-        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp" />
-        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp" />
         <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp" />
+        <option value="$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp" />
       </list>
     </option>
   </component>
@@ -260,6 +274,14 @@
               <item name="vm" type="462c0819:PsiDirectoryNode" />
               <item name="oops" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hotspot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hotspot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="share" type="462c0819:PsiDirectoryNode" />
+              <item name="vm" type="462c0819:PsiDirectoryNode" />
+              <item name="utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -267,7 +289,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="_after_first_fail_attempts&#9;null&#9;null&#10;steal&#9;null&#9;null&#10;Prom&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp&#10;stealT&#9;null&#9;null&#10;psS&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;Barrier&#9;null&#9;null&#10;stealTas&#9;null&#9;null&#10;Steal&#9;null&#9;null&#10;noop&#9;null&#9;null&#10;gcThrea&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;PSpRO&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp&#10;time&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTimer.cpp&#10;global&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/utilities/globalDefinitions.hpp&#10;StealTa&#9;null&#9;null&#10;oop&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/oops/oop.hpp&#10;padded&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/memory/padded.hpp&#10;GCTHR&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;StealT&#9;null&#9;null&#10;perfD&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/perfData.hpp&#10;GCT&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;psSca&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;ps&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;IdleT&#9;null&#9;null&#10;TaskMA&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp&#10;VM_O&#9;null&#9;null&#10;TASKMA&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.hpp&#10;VM_PA&#9;null&#9;null&#10;SystemGc&#9;null&#9;null&#10;VMThrea&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vmThread.cpp&#10;JVM_GC&#9;null&#9;null&#10;pop_g&#9;null&#9;null&#10;pop_gl&#9;null&#9;null&#10;OverflowQ&#9;null&#9;null&#10;Resour&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/memory/resourceArea.hpp&#10;stdint.h&#9;FILE&#9;file:///usr/include/stdint.h&#10;jni&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/prims/jni.cpp&#10;jn&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/cpu/x86/vm/jni_x86.h&#10;jnix&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/cpu/x86/vm/jni_x86.h&#10;jshort&#9;null&#9;null&#10;PSPromotionManager&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp&#10;PSPro&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp&#10;ScaVenge&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp&#10;VMOperation&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vm_operations.hpp&#10;VMTHREAD&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vmThread.cpp&#10;CREATEVM&#9;null&#9;null&#10;jni_create&#9;null&#9;null&#10;JNI_CREATE&#9;null&#9;null&#10;jni.cpp&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/prims/jni.cpp" />
+    <property name="SearchEverywhereHistoryKey" value="psS&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp&#10;psSc&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;PSpr&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp&#10;pss&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;GCThrea&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp&#10;gcThr&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;Prom&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp&#10;_after_first_fail_attempts&#9;null&#9;null&#10;steal&#9;null&#9;null&#10;stealT&#9;null&#9;null&#10;Barrier&#9;null&#9;null&#10;stealTas&#9;null&#9;null&#10;Steal&#9;null&#9;null&#10;noop&#9;null&#9;null&#10;gcThrea&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;PSpRO&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp&#10;time&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/shared/gcTimer.cpp&#10;global&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/utilities/globalDefinitions.hpp&#10;StealTa&#9;null&#9;null&#10;oop&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/oops/oop.hpp&#10;padded&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/memory/padded.hpp&#10;GCTHR&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;StealT&#9;null&#9;null&#10;perfD&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/perfData.hpp&#10;GCT&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp&#10;psSca&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;ps&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp&#10;IdleT&#9;null&#9;null&#10;TaskMA&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp&#10;VM_O&#9;null&#9;null&#10;TASKMA&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.hpp&#10;VM_PA&#9;null&#9;null&#10;SystemGc&#9;null&#9;null&#10;VMThrea&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vmThread.cpp&#10;JVM_GC&#9;null&#9;null&#10;pop_g&#9;null&#9;null&#10;pop_gl&#9;null&#9;null&#10;OverflowQ&#9;null&#9;null&#10;Resour&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/memory/resourceArea.hpp&#10;stdint.h&#9;FILE&#9;file:///usr/include/stdint.h&#10;jni&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/prims/jni.cpp&#10;jn&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/cpu/x86/vm/jni_x86.h&#10;jnix&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/cpu/x86/vm/jni_x86.h&#10;jshort&#9;null&#9;null&#10;PSPromotionManager&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp&#10;PSPro&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp&#10;ScaVenge&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp&#10;VMOperation&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vm_operations.hpp&#10;VMTHREAD&#9;FILE&#9;file:///home/danielyang/jvm-lab/jdk8u/hotspot/src/share/vm/runtime/vmThread.cpp&#10;CREATEVM&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="/usr/bin/git" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -316,15 +338,16 @@
       <workItem from="1530579374065" duration="389000" />
       <workItem from="1530580619165" duration="24877000" />
       <workItem from="1530667489038" duration="20388000" />
-      <workItem from="1530694481744" duration="9580000" />
+      <workItem from="1530694481744" duration="11969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90362000" />
+    <option name="totallyTimeSpent" value="92751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="129" y="13" width="3712" height="2148" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49957082" visible="true" weight="0.2013774" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -403,27 +426,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionLAB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1192">
-          <caret line="110" column="7" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/memory/allocation.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="140" column="2" selection-start-line="140" selection-start-column="2" selection-end-line="140" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/cardTableExtension.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/share/vm/oops/oop.inline.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -472,6 +474,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+          <folding>
+            <element signature="e#2785#2820#0" expanded="true" />
+            <element signature="e#4005#4031#0" expanded="true" />
+            <element signature="e#4150#4159#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -531,20 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcTrace.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="196" column="43" lean-forward="true" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcTimer.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
@@ -559,13 +552,6 @@
           <folding>
             <element signature="e#1056#1082#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/runtime/perfData.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15147">
-          <caret line="459" column="17" selection-start-line="459" selection-start-column="17" selection-end-line="459" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -632,23 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/utilities/globalDefinitions.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="1355" column="8" selection-start-line="1355" selection-start-column="8" selection-end-line="1355" selection-end-column="8" />
-          <folding>
-            <element signature="e#2101#2144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -674,13 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="178" column="55" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
@@ -731,10 +693,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp">
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcTrace.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="196" column="6" selection-start-line="196" selection-start-column="6" selection-end-line="196" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#1061#1087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="883">
+          <caret line="170" column="18" lean-forward="true" selection-start-line="170" selection-start-column="18" selection-end-line="170" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/utilities/accessFlags.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2376" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcPolicyCounters.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/runtime/perfData.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="486" column="16" selection-start-line="486" selection-start-column="16" selection-end-line="486" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="192" column="30" selection-start-line="192" selection-start-column="30" selection-end-line="192" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/utilities/globalDefinitions.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="263" column="21" selection-start-line="263" selection-start-column="21" selection-end-line="263" selection-end-column="21" />
+          <folding>
+            <element signature="e#2101#2144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1441">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="445" column="18" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
           <folding>
             <element signature="e#1061#1087#0" expanded="true" />
           </folding>
@@ -743,32 +786,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="145" column="16" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="188" column="40" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="456" column="44" selection-start-line="456" selection-start-column="44" selection-end-line="456" selection-end-column="44" />
+        <state relative-caret-position="891">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
           <folding>
-            <element signature="e#1061#1087#0" expanded="true" />
+            <marker date="1530709776548" expanded="true" signature="5522:5640" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/share/vm/gc_implementation/parallelScavenge/psTasks.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        <state relative-caret-position="586">
+          <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+          <folding>
+            <element signature="e#1190#1222#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

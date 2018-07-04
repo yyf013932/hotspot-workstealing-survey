@@ -73,6 +73,10 @@ Stack<markOop, mtGC>       PSScavenge::_preserved_mark_stack;
 Stack<oop, mtGC>           PSScavenge::_preserved_oop_stack;
 CollectorCounters *PSScavenge::_counters = NULL;
 
+jlong                      PSScavenge::_initial_time = 0;
+jlong                      PSScavenge::_par_time = 0;
+jlong                      PSScavenge::_final_time = 0;
+
 // Define before use
 class PSIsAliveClosure : public BoolObjectClosure {
 public:
@@ -729,13 +733,12 @@ bool PSScavenge::invoke_no_policy() {
         jlong par_time = scavenge_midpoint.ticks() - init_phase_exit.ticks();
         jlong finish_time = scavenge_exit.ticks() - scavenge_midpoint.ticks();
 
-        PSPromotionManager::_initial_time += init_time;
-        PSPromotionManager::_par_time += par_time;
-        PSPromotionManager::_final_time += finish_time;
+        _initial_time += init_time;
+        _par_time += par_time;
+        _final_time += finish_time;
 
         tty->print_cr("VM-Thread " INT64_FORMAT " " INT64_FORMAT " " INT64_FORMAT,
-                      PSPromotionManager::_initial_time, PSPromotionManager::_par_time,
-                      PSPromotionManager::_final_time);
+                      _initial_time, _par_time, _final_time);
 
         gc_task_manager()->print_task_time_stamps();
     }
@@ -871,6 +874,8 @@ GCTaskManager *const PSScavenge::gc_task_manager() {
 
 void PSScavenge::initialize() {
     // Arguments must have been parsed
+
+    _initial_time = _par_time = _final_time = 0;
 
     if (AlwaysTenure) {
         _tenuring_threshold = 0;

@@ -27,6 +27,7 @@
 
 #include "memory/allocation.hpp"
 #include "utilities/growableArray.hpp"
+#include "gcTaskManager.hpp"
 
 //
 // psTasks.hpp is a collection of GCTasks used by the
@@ -114,14 +115,11 @@ private:
     ParallelTaskTerminator *const _terminator;
 
 public:
-    static uint _steal_attempts ;
+    static uint _steal_attempts;
     static uint _steal_fail ;
     static uint _after_first_fail_attempts ;
     static uint _after_first_fail_attempts_fail ;
     static uint _gc_count ;
-    static bool _inited;
-
-    static void initialize();
 
     char *name() { return (char *) "steal-task"; }
 
