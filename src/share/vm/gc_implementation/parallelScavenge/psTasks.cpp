@@ -46,154 +46,171 @@
 // ScavengeRootsTask
 //
 
-void ScavengeRootsTask::do_it(GCTaskManager* manager, uint which) {
-  assert(Universe::heap()->is_gc_active(), "called outside gc");
+void ScavengeRootsTask::do_it(GCTaskManager *manager, uint which) {
+    assert(Universe::heap()->is_gc_active(), "called outside gc");
 
-  PSPromotionManager* pm = PSPromotionManager::gc_thread_promotion_manager(which);
-  PSScavengeRootsClosure roots_closure(pm);
-  PSPromoteRootsClosure  roots_to_old_closure(pm);
+    PSPromotionManager *pm = PSPromotionManager::gc_thread_promotion_manager(which);
+    PSScavengeRootsClosure roots_closure(pm);
+    PSPromoteRootsClosure roots_to_old_closure(pm);
 
-  switch (_root_type) {
-    case universe:
-      Universe::oops_do(&roots_closure);
-      break;
+    switch (_root_type) {
+        case universe:
+            Universe::oops_do(&roots_closure);
+            break;
 
-    case jni_handles:
-      JNIHandles::oops_do(&roots_closure);
-      break;
+        case jni_handles:
+            JNIHandles::oops_do(&roots_closure);
+            break;
 
-    case threads:
-    {
-      ResourceMark rm;
-      CLDClosure* cld_closure = NULL; // Not needed. All CLDs are already visited.
-      Threads::oops_do(&roots_closure, cld_closure, NULL);
+        case threads: {
+            ResourceMark rm;
+            CLDClosure *cld_closure = NULL; // Not needed. All CLDs are already visited.
+            Threads::oops_do(&roots_closure, cld_closure, NULL);
+        }
+            break;
+
+        case object_synchronizer:
+            ObjectSynchronizer::oops_do(&roots_closure);
+            break;
+
+        case flat_profiler:
+            FlatProfiler::oops_do(&roots_closure);
+            break;
+
+        case system_dictionary:
+            SystemDictionary::oops_do(&roots_closure);
+            break;
+
+        case class_loader_data: {
+            PSScavengeKlassClosure klass_closure(pm);
+            ClassLoaderDataGraph::oops_do(&roots_closure, &klass_closure, false);
+        }
+            break;
+
+        case management:
+            Management::oops_do(&roots_closure);
+            break;
+
+        case jvmti:
+            JvmtiExport::oops_do(&roots_closure);
+            break;
+
+
+        case code_cache: {
+            MarkingCodeBlobClosure each_scavengable_code_blob(&roots_to_old_closure,
+                                                              CodeBlobToOopClosure::FixRelocations);
+            CodeCache::scavenge_root_nmethods_do(&each_scavengable_code_blob);
+        }
+            break;
+
+        default:
+            fatal("Unknown root type");
     }
-    break;
 
-    case object_synchronizer:
-      ObjectSynchronizer::oops_do(&roots_closure);
-      break;
-
-    case flat_profiler:
-      FlatProfiler::oops_do(&roots_closure);
-      break;
-
-    case system_dictionary:
-      SystemDictionary::oops_do(&roots_closure);
-      break;
-
-    case class_loader_data:
-    {
-      PSScavengeKlassClosure klass_closure(pm);
-      ClassLoaderDataGraph::oops_do(&roots_closure, &klass_closure, false);
-    }
-    break;
-
-    case management:
-      Management::oops_do(&roots_closure);
-      break;
-
-    case jvmti:
-      JvmtiExport::oops_do(&roots_closure);
-      break;
-
-
-    case code_cache:
-      {
-        MarkingCodeBlobClosure each_scavengable_code_blob(&roots_to_old_closure, CodeBlobToOopClosure::FixRelocations);
-        CodeCache::scavenge_root_nmethods_do(&each_scavengable_code_blob);
-      }
-      break;
-
-    default:
-      fatal("Unknown root type");
-  }
-
-  // Do the real work
-  pm->drain_stacks(false);
+    // Do the real work
+    pm->drain_stacks(false);
 }
 
 //
 // ThreadRootsTask
 //
 
-void ThreadRootsTask::do_it(GCTaskManager* manager, uint which) {
-  assert(Universe::heap()->is_gc_active(), "called outside gc");
+void ThreadRootsTask::do_it(GCTaskManager *manager, uint which) {
+    assert(Universe::heap()->is_gc_active(), "called outside gc");
 
-  PSPromotionManager* pm = PSPromotionManager::gc_thread_promotion_manager(which);
-  PSScavengeRootsClosure roots_closure(pm);
-  CLDClosure* roots_from_clds = NULL;  // Not needed. All CLDs are already visited.
-  MarkingCodeBlobClosure roots_in_blobs(&roots_closure, CodeBlobToOopClosure::FixRelocations);
+    PSPromotionManager *pm = PSPromotionManager::gc_thread_promotion_manager(which);
+    PSScavengeRootsClosure roots_closure(pm);
+    CLDClosure *roots_from_clds = NULL;  // Not needed. All CLDs are already visited.
+    MarkingCodeBlobClosure roots_in_blobs(&roots_closure, CodeBlobToOopClosure::FixRelocations);
 
-  if (_java_thread != NULL)
-    _java_thread->oops_do(&roots_closure, roots_from_clds, &roots_in_blobs);
+    if (_java_thread != NULL)
+        _java_thread->oops_do(&roots_closure, roots_from_clds, &roots_in_blobs);
 
-  if (_vm_thread != NULL)
-    _vm_thread->oops_do(&roots_closure, roots_from_clds, &roots_in_blobs);
+    if (_vm_thread != NULL)
+        _vm_thread->oops_do(&roots_closure, roots_from_clds, &roots_in_blobs);
 
-  // Do the real work
-  pm->drain_stacks(false);
+    // Do the real work
+    pm->drain_stacks(false);
 }
 
 //
 // StealTask
 //
 
-StealTask::StealTask(ParallelTaskTerminator* t) :
-  _terminator(t) {}
+StealTask::StealTask(ParallelTaskTerminator *t) :
+        _terminator(t) {
+    if (!_inited)
+        initialize();
+}
 
-void StealTask::do_it(GCTaskManager* manager, uint which) {
-  assert(Universe::heap()->is_gc_active(), "called outside gc");
+void StealTask::initialize() {
+    _steal_attempts = _steal_fail = 0;
+    _after_first_fail_attempts = _after_first_fail_attempts_fail = 0;
+    _gc_count = 0;
+    _inited = true;
+}
 
-  PSPromotionManager* pm =
-    PSPromotionManager::gc_thread_promotion_manager(which);
-  pm->drain_stacks(true);
-  guarantee(pm->stacks_empty(),
-            "stacks should be empty at this point");
+void StealTask::do_it(GCTaskManager *manager, uint which) {
+    assert(Universe::heap()->is_gc_active(), "called outside gc");
 
-  int random_seed = 17;
-  while(true) {
-    StarTask p;
-    if (PSPromotionManager::steal_depth(which, &random_seed, p)) {
-      TASKQUEUE_STATS_ONLY(pm->record_steal(p));
-      pm->process_popped_location_depth(p);
-      pm->drain_stacks_depth(true);
-    } else {
-      if (terminator()->offer_termination()) {
-        break;
-      }
+    PSPromotionManager *pm =
+            PSPromotionManager::gc_thread_promotion_manager(which);
+    pm->drain_stacks(true);
+    guarantee(pm->stacks_empty(),
+              "stacks should be empty at this point");
+
+    int random_seed = 17;
+    bool is_fail = false;
+    while (true) {
+        _steal_attempts++;
+        if (is_fail)
+            _after_first_fail_attempts++;
+        StarTask p;
+        if (PSPromotionManager::steal_depth(which, &random_seed, p)) {
+            TASKQUEUE_STATS_ONLY(pm->record_steal(p));
+            pm->process_popped_location_depth(p);
+            pm->drain_stacks_depth(true);
+        } else {
+            _steal_fail++;
+            if (is_fail)
+                _after_first_fail_attempts_fail++;
+            is_fail = true;
+            if (terminator()->offer_termination()) {
+                break;
+            }
+        }
     }
-  }
-  guarantee(pm->stacks_empty(), "stacks should be empty at this point");
+    guarantee(pm->stacks_empty(), "stacks should be empty at this point");
 }
 
 //
 // OldToYoungRootsTask
 //
 
-void OldToYoungRootsTask::do_it(GCTaskManager* manager, uint which) {
-  // There are not old-to-young pointers if the old gen is empty.
-  assert(!_gen->object_space()->is_empty(),
-    "Should not be called is there is no work");
-  assert(_gen != NULL, "Sanity");
-  assert(_gen->object_space()->contains(_gen_top) || _gen_top == _gen->object_space()->top(), "Sanity");
-  assert(_stripe_number < ParallelGCThreads, "Sanity");
+void OldToYoungRootsTask::do_it(GCTaskManager *manager, uint which) {
+    // There are not old-to-young pointers if the old gen is empty.
+    assert(!_gen->object_space()->is_empty(),
+           "Should not be called is there is no work");
+    assert(_gen != NULL, "Sanity");
+    assert(_gen->object_space()->contains(_gen_top) || _gen_top == _gen->object_space()->top(),
+           "Sanity");
+    assert(_stripe_number < ParallelGCThreads, "Sanity");
 
-  {
-    PSPromotionManager* pm = PSPromotionManager::gc_thread_promotion_manager(which);
+    {
+        PSPromotionManager *pm = PSPromotionManager::gc_thread_promotion_manager(which);
 
-    assert(Universe::heap()->kind() == CollectedHeap::ParallelScavengeHeap, "Sanity");
-    CardTableExtension* card_table = (CardTableExtension *)Universe::heap()->barrier_set();
-    // FIX ME! Assert that card_table is the type we believe it to be.
+        assert(Universe::heap()->kind() == CollectedHeap::ParallelScavengeHeap, "Sanity");
+        CardTableExtension *card_table = (CardTableExtension *) Universe::heap()->barrier_set();
+        // FIX ME! Assert that card_table is the type we believe it to be.
 
-    card_table->scavenge_contents_parallel(_gen->start_array(),
-                                           _gen->object_space(),
-                                           _gen_top,
-                                           pm,
-                                           _stripe_number,
-                                           _stripe_total);
+        card_table->scavenge_contents_parallel(_gen->start_array(),
+                                               _gen->object_space(),
+                                               _gen_top,
+                                               pm,
+                                               _stripe_number,
+                                               _stripe_total);
 
-    // Do the real work
-    pm->drain_stacks(false);
-  }
+        // Do the real work
+        pm->drain_stacks(false);
+    }
 }

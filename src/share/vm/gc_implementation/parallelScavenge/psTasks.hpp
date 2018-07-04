@@ -34,13 +34,21 @@
 //
 
 class GCTask;
+
 class OopClosure;
+
 class OopStack;
+
 class ObjectStartArray;
+
 class ParallelTaskTerminator;
+
 class MutableSpace;
+
 class PSOldGen;
+
 class Thread;
+
 class VMThread;
 
 //
@@ -51,27 +59,27 @@ class VMThread;
 //
 
 class ScavengeRootsTask : public GCTask {
- public:
-  enum RootType {
-    universe              = 1,
-    jni_handles           = 2,
-    threads               = 3,
-    object_synchronizer   = 4,
-    flat_profiler         = 5,
-    system_dictionary     = 6,
-    class_loader_data     = 7,
-    management            = 8,
-    jvmti                 = 9,
-    code_cache            = 10
-  };
- private:
-  RootType _root_type;
- public:
-  ScavengeRootsTask(RootType value) : _root_type(value) {}
+public:
+    enum RootType {
+        universe = 1,
+        jni_handles = 2,
+        threads = 3,
+        object_synchronizer = 4,
+        flat_profiler = 5,
+        system_dictionary = 6,
+        class_loader_data = 7,
+        management = 8,
+        jvmti = 9,
+        code_cache = 10
+    };
+private:
+    RootType _root_type;
+public:
+    ScavengeRootsTask(RootType value) : _root_type(value) {}
 
-  char* name() { return (char *)"scavenge-roots-task"; }
+    char *name() { return (char *) "scavenge-roots-task"; }
 
-  virtual void do_it(GCTaskManager* manager, uint which);
+    virtual void do_it(GCTaskManager *manager, uint which);
 };
 
 //
@@ -82,16 +90,17 @@ class ScavengeRootsTask : public GCTask {
 //
 
 class ThreadRootsTask : public GCTask {
- private:
-  JavaThread* _java_thread;
-  VMThread* _vm_thread;
- public:
-  ThreadRootsTask(JavaThread* root) : _java_thread(root), _vm_thread(NULL) {}
-  ThreadRootsTask(VMThread* root) : _java_thread(NULL), _vm_thread(root) {}
+private:
+    JavaThread *_java_thread;
+    VMThread *_vm_thread;
+public:
+    ThreadRootsTask(JavaThread *root) : _java_thread(root), _vm_thread(NULL) {}
 
-  char* name() { return (char *)"thread-roots-task"; }
+    ThreadRootsTask(VMThread *root) : _java_thread(NULL), _vm_thread(root) {}
 
-  virtual void do_it(GCTaskManager* manager, uint which);
+    char *name() { return (char *) "thread-roots-task"; }
+
+    virtual void do_it(GCTaskManager *manager, uint which);
 };
 
 //
@@ -101,16 +110,26 @@ class ThreadRootsTask : public GCTask {
 //
 
 class StealTask : public GCTask {
- private:
-   ParallelTaskTerminator* const _terminator;
- public:
-  char* name() { return (char *)"steal-task"; }
+private:
+    ParallelTaskTerminator *const _terminator;
 
-  StealTask(ParallelTaskTerminator* t);
+public:
+    static uint _steal_attempts ;
+    static uint _steal_fail ;
+    static uint _after_first_fail_attempts ;
+    static uint _after_first_fail_attempts_fail ;
+    static uint _gc_count ;
+    static bool _inited;
 
-  ParallelTaskTerminator* terminator() { return _terminator; }
+    static void initialize();
 
-  virtual void do_it(GCTaskManager* manager, uint which);
+    char *name() { return (char *) "steal-task"; }
+
+    StealTask(ParallelTaskTerminator *t);
+
+    ParallelTaskTerminator *terminator() { return _terminator; }
+
+    virtual void do_it(GCTaskManager *manager, uint which);
 };
 
 //
@@ -159,25 +178,25 @@ class StealTask : public GCTask {
 // to the start of stride 0 in slice 1.
 
 class OldToYoungRootsTask : public GCTask {
- private:
-  PSOldGen* _gen;
-  HeapWord* _gen_top;
-  uint _stripe_number;
-  uint _stripe_total;
+private:
+    PSOldGen *_gen;
+    HeapWord *_gen_top;
+    uint _stripe_number;
+    uint _stripe_total;
 
- public:
-  OldToYoungRootsTask(PSOldGen *gen,
-                      HeapWord* gen_top,
-                      uint stripe_number,
-                      uint stripe_total) :
-    _gen(gen),
-    _gen_top(gen_top),
-    _stripe_number(stripe_number),
-    _stripe_total(stripe_total) { }
+public:
+    OldToYoungRootsTask(PSOldGen *gen,
+                        HeapWord *gen_top,
+                        uint stripe_number,
+                        uint stripe_total) :
+            _gen(gen),
+            _gen_top(gen_top),
+            _stripe_number(stripe_number),
+            _stripe_total(stripe_total) {}
 
-  char* name() { return (char *)"old-to-young-roots-task"; }
+    char *name() { return (char *) "old-to-young-roots-task"; }
 
-  virtual void do_it(GCTaskManager* manager, uint which);
+    virtual void do_it(GCTaskManager *manager, uint which);
 };
 
 #endif // SHARE_VM_GC_IMPLEMENTATION_PARALLELSCAVENGE_PSTASKS_HPP

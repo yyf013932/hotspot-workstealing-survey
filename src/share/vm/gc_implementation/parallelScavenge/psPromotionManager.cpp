@@ -46,6 +46,8 @@ void PSPromotionManager::initialize() {
   ParallelScavengeHeap* heap = (ParallelScavengeHeap*)Universe::heap();
   assert(heap->kind() == CollectedHeap::ParallelScavengeHeap, "Sanity");
 
+  _initial_time = _par_time = _final_time = 0;
+
   _old_gen = heap->old_gen();
   _young_space = heap->young_gen()->to_space();
 
